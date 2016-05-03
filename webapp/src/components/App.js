@@ -1,7 +1,11 @@
 import React from 'react';
 
-export class App extends React.Component {
-  render() {
-    return <h1>Hello, world!</h1>;
-  }
-}
+
+export const App = ({ greeting }) =>
+  <h1>
+    Hello, {greeting}?
+  </h1>;
+
+App.propTypes = {
+  greeting: React.PropTypes.string.isRequired,
+};
