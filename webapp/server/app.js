@@ -1,10 +1,23 @@
 /* eslint no-console: "off" */
 const express = require('express');
 
+/**
+ * Builds the app;
+ */
+function getApp() {
+  const app = express();
+
+  app.use(express.static('dist'));
+
+  return app;
+}
+
+
 let currentPort = 0;
 let currentApp = null;
 let server = null;
 
+// Allows a node http server to be destroyed and all its connections closed
 function enableDestroy(s) {
   const connections = {};
 
@@ -24,10 +37,11 @@ function enableDestroy(s) {
   };
 }
 
+// Export Start / Stop methods.
 module.exports = {
   start: (port = 8080) => {
     if (currentApp === null && server === null) {
-      currentApp = express();
+      currentApp = getApp();
 
       currentApp.use(express.static('dist'));
 
