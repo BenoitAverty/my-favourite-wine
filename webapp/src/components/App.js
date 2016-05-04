@@ -2,9 +2,9 @@ import React from 'react';
 
 
 export const App = ({ greeting }) =>
-  <h2>
+  <h3>
     Hello, {greeting}?
-  </h2>;
+  </h3>;
 
 App.propTypes = {
   greeting: React.PropTypes.string.isRequired,

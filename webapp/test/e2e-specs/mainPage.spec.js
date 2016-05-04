@@ -1,19 +1,25 @@
 /* eslint-env node,mocha */
 /* global browser */
-const expect = require('chai').expect;
+// const expect = require('chai').expect;
 
 // Runs the express server. It's closed at the end of the tests only. If experiencing
 // flaky tests, try moving the require in a beforeEach method.
-const server = require('../../server/index.js');
+const { start, stop } = require('../../server/app');
 
 describe('Main Page', () => {
-  it('should contain a "Hello, world!"" title', () => {
+  beforeEach(start);
+
+  it('should contain a h1 title', () => {
     browser.url('http://localhost:8080');
-    browser.waitForExist('h2', 1000);
-    expect(true);
+    browser.waitForExist('h1');
   });
 
-  after(() => {
-    server.closeServer();
+  it('should contain a h2 title', () => {
+    browser.url('http://localhost:8080');
+    browser.waitForExist('h2');
+  });
+
+  afterEach((done) => {
+    stop(true, done);
   });
 });
