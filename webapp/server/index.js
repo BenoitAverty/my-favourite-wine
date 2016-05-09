@@ -1,3 +1,3 @@
-const { start } = require('./app');
+const app = require('./app');
 
-start(8080);
+app.listen(8080);

@@ -1,11 +1,5 @@
 import React from 'react';
+import { Header } from './Header';
 
-
-export const App = ({ greeting }) =>
-  <h2>
-    Hello, {greeting}?
-  </h2>;
-
-App.propTypes = {
-  greeting: React.PropTypes.string.isRequired,
-};
+export const App = () =>
+  <Header />;
