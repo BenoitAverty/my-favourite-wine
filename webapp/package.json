@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npm run build && chimp --mocha --path test/e2e-specs",
     "start": "npm run build && node server/index.js",
-    "build": "mocha --compilers js:babel-register test/component-specs && webpack",
+    "build": "mocha --compilers js:babel-register --require test/component-specs/helper.js test/component-specs && webpack",
     "dev": "webpack-dev-server --watch --inline --content-base dist/"
   },
   "repository": {

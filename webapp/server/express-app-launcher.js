@@ -1,4 +1,4 @@
-/* eslint no-console: "off" */
+/** eslint-env node */
 
 // Allows a node http server to be destroyed and all its connections closed.
 // Returns the function that destroys the server passed as a parameter.

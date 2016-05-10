@@ -2,11 +2,13 @@
 
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme'; // look into enzyme-chai
+import { shallow } from 'enzyme';
 import { Header } from '../../src/components';
 
 describe('Header Component', () => {
   it('Should render a title with the name of the app', () => {
-    expect(shallow(<Header />).contains(<h1>My Favourite Wine</h1>)).to.equal(true);
+    const wrapper = shallow(<Header />);
+    expect(wrapper).to.have.tagName('h1');
+    expect(wrapper.find('h1')).to.have.text('My Favourite Wine');
   });
 });

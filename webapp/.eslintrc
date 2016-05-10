@@ -1,7 +1,10 @@
 {
-    "extends": "airbnb",
-    "installedESLint": true,
-    "plugins": [
-        "react"
-    ]
+  "extends": "airbnb",
+  "rules": {
+    "no-console": "off",
+  },
+  "installedESLint": true,
+  "plugins": [
+    "react"
+  ]
 }
