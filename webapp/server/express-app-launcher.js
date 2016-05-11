@@ -44,14 +44,16 @@ module.exports = function makeExpressLauncher(app) {
 
       return currentApp;
     },
-    stop: (destroy, done) => {
+    stop: (destroy = false, done = null) => {
       if (server !== null) {
         const callback = () => {
           currentPort = 0;
           currentApp = null;
           server = null;
           console.log('Application stopped.');
-          done();
+          if (typeof done === 'function') {
+            done();
+          }
         };
 
         if (destroy) {
