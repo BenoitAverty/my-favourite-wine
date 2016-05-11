@@ -32,5 +32,6 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-# Build artifacts
+# Build and test artifacts
 webapp/dist/my-favourite-wine.js
+webapp/test/output
