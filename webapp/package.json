@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npm run build && codeceptjs run --steps",
     "start": "npm run build && node server/index.js",
-    "build": "mocha --compilers js:babel-register --require test/tooling/componentSpecHelper.js test/component-specs && webpack",
+    "build": "mocha --recursive --compilers js:babel-register --require test/tooling/componentSpecHelper.js test/app-tests && webpack",
     "dev": "webpack-dev-server --watch --inline --content-base dist/",
     "launch-selenium": "selenium-standalone start",
     "install-selenium": "selenium-standalone install"
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.4.2",
+    "chai-things": "^0.2.0",
     "codeceptjs": "^0.3.4",
     "enzyme": "^2.2.0",
     "eslint": "^2.9.0",
@@ -40,6 +41,7 @@
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
+    "redux-mock-store": "^1.0.2",
     "selenium-standalone": "^5.1.0",
     "webdriverio": "^4.0.7",
     "webpack": "^1.13.0",

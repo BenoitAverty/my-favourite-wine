@@ -1,5 +1,13 @@
 import React from 'react';
-import { Header } from './Header';
+import { Provider } from 'react-redux';
+
+import { Header, RateWineSection } from '.';
+import configureStore from '../store';
+
+const store = configureStore();
 
 export const App = () =>
-  <Header />;
+  <Provider store={store}>
+    <Header />
+    <RateWineSection />
+  </Provider>;

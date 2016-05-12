@@ -17,8 +17,8 @@ After(() => {
 });
 
 Scenario('Searching a wine and siplaying info', (I) => {
-  I.see('Rate a Wine');
-  I.click('Rate a Wine');
+  I.see('Find a Wine');
+  I.click('Find a Wine');
   I.see('Search for a Wine');
   I.fillField('.search', 'clos du romarin');
   I.dontSee('Clos du Romarin');
