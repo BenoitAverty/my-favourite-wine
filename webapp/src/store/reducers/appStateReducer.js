@@ -4,8 +4,7 @@ const initialState = {
   label: 'MAIN_PAGE',
 };
 
-export const appStateReducer = () => (appState = initialState, action) => {
-  console.log(`Received action: ${action}. the state is ${appState}`);
+const appStateReducer = (appState = initialState, action) => {
   switch (action.type) {
     case SEARCH_WINE:
       return { label: 'SEARCHING_WINE' };
@@ -13,3 +12,5 @@ export const appStateReducer = () => (appState = initialState, action) => {
       return appState;
   }
 };
+
+export default appStateReducer;

@@ -12,12 +12,15 @@ const InternalRateWineSection = ({ onSectionSelection }) =>
   </div>;
 
 InternalRateWineSection.propTypes = {
-  onSectionSelection: 'function',
+  onSectionSelection: React.PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onSectionSelection: () => {
-    console.log('dispatching');
+  onSectionSelection: (e) => {
+    if (typeof e !== 'undefined') {
+      e.preventDefault();
+    }
+
     dispatch(searchWine());
   },
 });
