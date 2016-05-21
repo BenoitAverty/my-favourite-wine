@@ -34,4 +34,5 @@ node_modules
 
 # Build and test artifacts
 webapp/dist/my-favourite-wine.js
+webapp/dist/my-favourite-wine.js.map
 webapp/test/output
