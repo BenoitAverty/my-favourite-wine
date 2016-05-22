@@ -3,3 +3,4 @@ export { default as Header } from './Header';
 
 export { default as RateWineSection } from './RateWineSection';
 export { default as WineSearch } from './WineSearch';
+export { default as WineSearchResult } from './WineSearchResult';
